@@ -1,0 +1,94 @@
+﻿<Window x:Class="GymManagementSystem.ConfirmGroupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GymManagementSystem"
+        mc:Ignorable="d"
+        Title="ConfirmGroupWindow" Height="530" Width="700" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Icon="/Images/Img.png">
+    <Grid>
+        <TextBlock Text="Group training instance" Margin="10,10,0,0"/>
+        <StackPanel Height="370" Width="370" Margin="20,40,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Border CornerRadius="30" Background="#FFBBC9E5" Height="50" Margin="0,5">
+                <StackPanel>
+                    <TextBlock Text="Group name" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="20" />
+                    <Label Name="lblGroupName"  Background="#e9f7ff" Height="30" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" />
+                </StackPanel>
+            </Border>
+            <Border CornerRadius="30" Background="#FFBBC9E5" Height="50" Margin="0,5">
+                <StackPanel>
+                    <TextBlock Text="Duration" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="20" />
+                    <Label Name="lblDuration"  Background="#e9f7ff" Height="30" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" />
+                </StackPanel>
+            </Border>
+            <Border CornerRadius="30" Background="#FFBBC9E5" Height="50" Margin="0,5">
+                <StackPanel>
+                    <TextBlock Text="Date" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="20" />
+                    <Label Name="lblDate"  Background="#e9f7ff" Height="30" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" />
+                </StackPanel>
+            </Border>
+            <Border CornerRadius="30" Background="#FFBBC9E5" Height="50" Margin="0,5">
+                <StackPanel>
+                    <TextBlock Text="Time" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="20" />
+                    <Label Name="lblTime"  Background="#e9f7ff" Height="30" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" />
+                </StackPanel>
+            </Border>
+            <Border CornerRadius="30" Background="#FFBBC9E5" Height="110" Margin="0,5">
+                <StackPanel>
+                    <TextBlock Text="Description" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="20" />
+                    <!--<Label Name="lblDescription"  Background="#e9f7ff" Height="90" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" />-->
+                    <TextBox Name="txtDescription"  Background="#e9f7ff" Height="90" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel Height="355" Width="270" Margin="0,50,20,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <TextBlock Text=" Responsible Trainer:" Margin="10,10,10,5" FontSize="20"/>
+            <Label Name="lblResponsibleTrainer" Background="#e9f7ff" Height="30" Margin="10,0,10,10" />
+            <TextBlock Text="Joined Members:" Margin="10" FontSize="20"/>
+            <ListBox Margin="10" Name="lstMembers" Height="200" Background="#e9f7ff" >
+            </ListBox>
+
+
+        </StackPanel>
+        <Grid Height="80" Width="660" Margin="0,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Border CornerRadius="12" Margin="80,0,0,0" Padding="2" Width="200" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                        <GradientStop Color="#0693e3" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Cursor="" Name="btnConfirm" Content="Confirm" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="18" FontWeight="Bold" Click="btnConfirm_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+            <Border CornerRadius="12" Margin="0,0,80,0" Padding="2" Width="200" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                        <GradientStop Color="#0693e3" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Cursor="" Name="btnEdit" Content="Edit" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="18" FontWeight="Bold" Click="btnEdit_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+        </Grid>
+
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                <GradientStop Color="#dde2ec" Offset="0"/>
+
+            </LinearGradientBrush>
+        </Grid.Background>
+    </Grid>
+</Window>

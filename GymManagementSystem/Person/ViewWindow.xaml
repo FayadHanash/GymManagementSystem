@@ -1,0 +1,166 @@
+﻿<Window x:Class="GymManagementSystem.ViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GymManagementSystem"
+        mc:Ignorable="d"
+        Title="ViewWindow" Height="520" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Icon="/Images/Img.png">
+    <Grid>
+        <TabControl>
+            <TabItem Name="tabItemMember" Header="Member" Background="#3ca1e2">
+                <Grid>
+                    <Grid Width="600" Height="350" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,30,0,0">
+                        <GroupBox Header="Members">
+                            <ListView Margin="10" Name="lstMembers" SelectionChanged="lstMembers_SelectionChanged" Background="#dde2ec" GridViewColumnHeader.Click="lstMembersGridViewCloumnHeader_Click">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Person Number" Width="100" DisplayMemberBinding="{Binding PersonNumber}" />
+                                        <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}" />
+                                        <GridViewColumn Header="Phone" Width="150" DisplayMemberBinding="{Binding Phone}" />
+                                        <GridViewColumn Header="Email" Width="160" DisplayMemberBinding="{Binding Email}" />
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </GroupBox>
+                    </Grid>
+                    <Border CornerRadius="12" Margin="50,0,0,10" Padding="2" Width="200" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                                <GradientStop Color="#0693e3" Offset="0.75"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Button Cursor="" Name="btnEditMember" Content="Edit Member" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="20" FontWeight="Bold" Click="btnEditMember_Click">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
+                    <Border CornerRadius="12" Margin="0,0,0,10" Padding="2" Width="200" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                                <GradientStop Color="#0693e3" Offset="0.75"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Button Cursor="" Name="btnDeleteMember" Content="Delete Member" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="20" FontWeight="Bold" Click="btnDeleteMember_Click"  >
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
+                    <Border CornerRadius="12" Margin="0,0,50,10" Padding="2" Width="200" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                                <GradientStop Color="#0693e3" Offset="0.75"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Button Cursor="" Name="btnCloseMember" Content="Close Window" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="20" FontWeight="Bold" Click="btnCloseMember_Click" >
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
+
+                    <GroupBox Header="Members Details"  Width="240" Height="350" VerticalAlignment="Top" FontSize="15" HorizontalAlignment="Right" Margin="0,30,20,0">
+                        <TextBox Name="lblMemberDetails" Text="" Background="#e9f7ff" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible"/>
+                    </GroupBox>
+
+
+
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#dde2ec" Offset="0"/>
+                            <!--dde2ec-->
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="tabItemTrainer" Header="Trainer" Background="#3ca1e2">
+                <Grid>
+                    <Grid Width="600" Height="350" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,30,0,0">
+                        <GroupBox Header="Trainers">
+                            <ListView Margin="10" Name="lstTrainers" SelectionChanged="lstTrainers_SelectionChanged" Background="#dde2ec" GridViewColumnHeader.Click="lstTrainersGridColumnHeader_Click" >
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Person Number" Width="100" DisplayMemberBinding="{Binding PersonNumber}" />
+                                        <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}" />
+                                        <GridViewColumn Header="Phone" Width="150" DisplayMemberBinding="{Binding Phone}" />
+                                        <GridViewColumn Header="Email" Width="160" DisplayMemberBinding="{Binding Email}" />
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </GroupBox>
+                    </Grid>
+                    <Border CornerRadius="12" Margin="50,0,0,10" Padding="2" Width="200" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                                <GradientStop Color="#0693e3" Offset="0.75"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Button Cursor="" x:Name="btnEditTrainer" Content="Edit Trainer" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="20" FontWeight="Bold" Click="btnEditTrainer_Click">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
+                    <Border CornerRadius="12" Margin="0,0,0,10" Padding="2" Width="200" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                                <GradientStop Color="#0693e3" Offset="0.75"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Button Cursor="" x:Name="btnDeleteTrainer" Content="Delete Trainer" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="20" FontWeight="Bold" Click="btnDeleteTrainer_Click"  >
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
+                    <Border CornerRadius="12" Margin="0,0,50,10" Padding="2" Width="200" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                                <GradientStop Color="#0693e3" Offset="0.75"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Button Cursor="" x:Name="btnCloseTrainer" Content="Close Window" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="20" FontWeight="Bold" Click="btnCloseTrainer_Click" >
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Border>
+
+
+                    <GroupBox Header="Trainer Details"  Width="240" Height="350" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Right" Margin="0,30,20,0">
+                        <TextBox Name="lblTrainerDetails" Text="" Background="#e9f7ff" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible"/>
+                    </GroupBox>
+
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#dde2ec" Offset="0"/>
+                            <!--dde2ec-->
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>

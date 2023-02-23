@@ -1,0 +1,49 @@
+﻿<Window x:Class="GymManagementSystem.WpfAboutBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GymManagementSystem"
+        mc:Ignorable="d"
+        Title="WpfAboutBox" Height="400" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Icon="/Images/Img.png">
+    <Grid>
+        <Grid  Width="170" Margin="20,30,30,30" HorizontalAlignment="Left">
+            <Image>
+                <Image.Source>
+                    <BitmapImage UriSource="/images/Img.png" Rotation="Rotate270"/>
+                </Image.Source>
+
+            </Image>
+        </Grid>
+        <StackPanel  Width="390" Height="260" Margin="0,0,10,40" HorizontalAlignment="Right">
+            <Label Name="lblProductName" Height="30" Width="380" Margin="10,0" HorizontalAlignment="Left"/>
+            <Label Name="lblVersion" Height="30" Width="380" Margin="10,0" HorizontalAlignment="Left"/>
+            <Label Name="lblCopyright" Height="30" Width="380" Margin="10,0" HorizontalAlignment="Left"/>
+            <Label Name="lblCompanyName" Height="30" Width="380" Margin="10,0" HorizontalAlignment="Left"/>
+            <TextBox Name="txtDescription" Background="#e9f7ff" Height="130" Width="380" Margin="10,0" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible"/>
+        </StackPanel>
+        <Grid Width="360" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,30,15">
+            <Border CornerRadius="12"  Padding="2" Width="120" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                        <GradientStop Color="#0693e3" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Cursor="" x:Name="btnOK" Content="OK" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="20" FontWeight="Bold" Click="btnOK_Click" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+        </Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                <GradientStop Color="#dde2ec" Offset="0"/>
+
+            </LinearGradientBrush>
+        </Grid.Background>
+    </Grid>
+</Window>

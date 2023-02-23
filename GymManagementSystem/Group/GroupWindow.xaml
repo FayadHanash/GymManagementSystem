@@ -1,0 +1,144 @@
+﻿<Window x:Class="GymManagementSystem.GroupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GymManagementSystem"
+        mc:Ignorable="d"
+        Title="GroupWindow" Height="510" Width="800" ResizeMode="NoResize" Icon="/Images/Img.png" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <GroupBox Header="Create a group" Height="370" Width="370" Margin="20,10,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <StackPanel>
+                <Border CornerRadius="30" Background="#FFBBC9E5" Height="50" Margin="0,5">
+                    <StackPanel>
+                        <TextBlock Text="Select a group" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="20" />
+                        <ComboBox Name="cmbSelectGroup"  Background="#e9f7ff" Height="30" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#e9f7ff"/>
+                            </ComboBox.Resources>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="30" Background="#FFBBC9E5" Height="50" Margin="0,5">
+                    <StackPanel>
+                        <TextBlock Text="Duration" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="20" />
+                        <ComboBox Name="cmbDuration"  Background="#e9f7ff" Height="30" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" BorderBrush="#FFE9F7FF">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#e9f7ff"/>
+                            </ComboBox.Resources>
+                        </ComboBox>
+                    </StackPanel>
+
+                </Border>
+                <Border CornerRadius="30" Background="#FFBBC9E5" Height="50" Margin="0,5">
+                    <StackPanel>
+                        <TextBlock Text="Date" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="20" />
+                        <ComboBox Name="cmbDate"  Background="#e9f7ff" Height="30" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" BorderBrush="#FFE9F7FF">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#e9f7ff"/>
+                            </ComboBox.Resources>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="30" Background="#FFBBC9E5" Height="50" Margin="0,5">
+                    <StackPanel>
+                        <TextBlock Text="Time" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="20" />
+                        <ComboBox Name="cmbTime"  Background="#e9f7ff" Height="30" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" BorderBrush="#FFE9F7FF">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#e9f7ff"/>
+                            </ComboBox.Resources>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="30" Background="#FFBBC9E5" Height="90" Margin="0,5">
+                    <StackPanel>
+                        <TextBlock Text="Description" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="20" />
+                        <TextBox Name="txtDescription"  Background="#e9f7ff" Height="70" Width="200" TextWrapping="Wrap" HorizontalAlignment="Right" Margin="0,-30,10,0"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="" Name="grpTrainerAndMember"  Height="455" Width="370" Margin="0,10,20,0" HorizontalAlignment="Right" VerticalAlignment="Top" >
+            <StackPanel>
+                <Border CornerRadius="30" Background="#FFBBC9E5" Height="50" Margin="0,5">
+                    <StackPanel>
+                        <TextBlock Text="Select a trainer" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="18" />
+                        <ComboBox Name="cmbSelectTrainer" Background="#e9f7ff" Height="30" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" BorderBrush="#FFE9F7FF">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#e9f7ff"/>
+                            </ComboBox.Resources>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="30" Background="#FFBBC9E5" Height="50" Margin="0,5">
+                    <StackPanel>
+                        <TextBlock Text="Select a member" Height="30" Width="150" HorizontalAlignment="Left"   Margin="10,10,0,0" FontSize="18" />
+                        <ComboBox Name="cmbSelectMember" SelectionChanged="cmbSelectMember_SelectionChanged" Background="#e9f7ff" Height="30" Width="200"  HorizontalAlignment="Right" Margin="0,-30,10,0" BorderBrush="#FFE9F7FF">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#e9f7ff"/>
+                            </ComboBox.Resources>
+                        </ComboBox>
+                    </StackPanel>
+
+                </Border>
+                <ListBox Margin="10" Name="lstSelectedMembers" Height="230" Width="300" Background="#e9f7ff">
+                </ListBox>
+                <Border CornerRadius="12" Margin="10" Padding="2" Width="250" Height="40" RenderTransformOrigin="1,1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                            <GradientStop Color="#0693e3" Offset="0.75"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Button Cursor="" Name="btnRemoveMemberFromlst" Content="Remove member from list" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="18" FontWeight="Bold" Click="btnRemoveMemberFromlst_Click">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Border>
+            </StackPanel>
+        </GroupBox>
+        <Grid Height="80" Width="370" Margin="20,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Border CornerRadius="12" Margin="15" Padding="2" Width="150" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                        <GradientStop Color="#0693e3" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Cursor="" Name="btnCreateGroup" Content="Create" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="18" FontWeight="Bold" Click="btnCreateGroup_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+            <Border CornerRadius="12" Margin="15" Padding="2" Width="150" Height="50" RenderTransformOrigin="1,1" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFC5D4F0" Offset="0"/>
+                        <GradientStop Color="#0693e3" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Cursor="" Name="btnCancel" Content="Cancel" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="18" FontWeight="Bold" Click="btnCancel_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+        </Grid>
+
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                <GradientStop Color="#dde2ec" Offset="0"/>
+
+            </LinearGradientBrush>
+        </Grid.Background>
+    </Grid>
+</Window>
